@@ -1,50 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<body>
-
-  <h1>Estilos de Luta</h1>
-
-  <div class="tabs">
-    <button class="tab-button active" onclick="showTab('boxe')">Boxe</button>
-    <button class="tab-button" onclick="showTab('mma')">MMA</button>
-    <button class="tab-button" onclick="showTab('jiujitsu')">Jiu-Jitsu</button>
-  </div>
-
-  <p>
-  <div id="boxe" class="tab-content active">
-    <h2>Boxe</h2>
-    <p>O boxe é um esporte de combate que utiliza apenas os punhos para atacar e defender. É conhecido por sua estratégia, agilidade e resistência.</p>
-  </div>
-</p>
-
-  <p>
-  <div id="mma" class="tab-content">
-    <h2>MMA</h2>
-    <p>O MMA (Artes Marciais Mistas) é um esporte que combina várias técnicas de luta, como boxe, jiu-jitsu, muay thai e wrestling, promovendo combates completos.</p>
-  </div>
-</p>
-  
-<p>
-  <div id="jiujitsu" class="tab-content">
-    <h2>Jiu-Jitsu</h2>
-    <p>O Jiu-Jitsu é uma arte marcial que enfatiza o combate no solo, utilizando alavancas, estrangulamentos e finalizações para dominar o oponente.</p>
-  </div>
-</p>
-
-  <script>
-    function showTab(tabId) 
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-
-      
-      document.getElementById(tabId).classList.add('active');
-      event.currentTarget.classList.add('active');
-    }
-  </script>
-
-</body>
-</html>
-
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -55,127 +9,56 @@
   <header>
     <h1>Portal das Lutas</h1>
     <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#tipos">Tipos de Luta</a>
-      <a href="#galeria">Galeria</a>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="galeria.html">Galeria</a>
     </nav>
   </header>
 
-  <section id="sobre">
-    <h2>Sobre o Portal</h2>
-    <p>Este site é dedicado aos apaixonados por lutas! Aqui você encontrará informações sobre diferentes estilos de combate, história, curiosidades e muito mais.</p>
+  <section class="capa">
+    <h2>Bem-vindo ao universo das lutas!</h2>
+    <p>Conheça os estilos mais populares e suas características únicas.</p>
   </section>
 
-  <section id="tipos">
-    <h2>Tipos de Luta</h2>
-    <div class="tabs">
-      <button class="tab-btn active" onclick="openTab('boxe')">Boxe</button>
-      <button class="tab-btn" onclick="openTab('mma')">MMA</button>
-      <button class="tab-btn" onclick="openTab('jiujitsu')">Jiu-Jitsu</button>
+  <section class="abas">
+    <h2>Estilos de Luta</h2>
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="mostrarAba('boxe')">Boxe</button>
+      <button class="tab-btn" onclick="mostrarAba('mma')">MMA</button>
+      <button class="tab-btn" onclick="mostrarAba('jiujitsu')">Jiu-Jitsu</button>
     </div>
 
     <div id="boxe" class="tab-content active">
       <h3>Boxe</h3>
-      <p>Modalidade focada em socos, movimentação, e defesa. É um dos esportes mais tradicionais e populares do mundo.</p>
+      <img src="https://via.placeholder.com/300x180?text=Boxe" alt="Boxe">
+      <p>Esporte tradicional focado em socos e movimentação. Requer estratégia, reflexo e resistência.</p>
     </div>
+
     <div id="mma" class="tab-content">
       <h3>MMA</h3>
-      <p>Combinação de várias artes marciais em um só esporte. Mistura técnicas do boxe, jiu-jitsu, muay thai, wrestling e muito mais.</p>
+      <img src="https://via.placeholder.com/300x180?text=MMA" alt="MMA">
+      <p>Combinação de diversas artes marciais como jiu-jitsu, muay thai, wrestling e boxe.</p>
     </div>
 
     <div id="jiujitsu" class="tab-content">
       <h3>Jiu-Jitsu</h3>
-      <p>Arte marcial que enfatiza a luta no chão e finalizações, usando alavancas e técnicas de imobilização.</p>
+      <img src="https://via.placeholder.com/300x180?text=Jiu-Jitsu" alt="Jiu-Jitsu">
+      <p>Arte marcial que foca em combate no chão e finalizações com alavancas e estrangulamentos.</p>
     </div>
   </section>
 
-  <section id="galeria">
-    <h2>Galeria de Imagens</h2>
-    <img src="https://via.placeholder.com/150" alt="Lutador de boxe">
-    <img src="https://via.placeholder.com/150" alt="Lutadores de MMA">
-    <img src="https://via.placeholder.com/150" alt="Treino de jiu-jitsu">
-  </section>
-
   <footer>
-    <p>&copy; 2025 Portal das Lutas. Todos os direitos reservados.</p>
-    <a href="#">Clique para baixar</a>
+    <p>&copy; 2025 Portal das Lutas - Todos os direitos reservados.</p>
   </footer>
 
   <script>
-    function openTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    function mostrarAba(id) {
+      document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
+
+      document.getElementById(id).classList.add('active');
       event.currentTarget.classList.add('active');
     }
   </script>
 </body>
 </html>
-
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal das Lutas</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Portal das Lutas</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#tipos">Tipos de Luta</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="sobre">
-        <h2>Sobre o Portal</h2>
-        <p>Este site é dedicado aos apaixonados por lutas! Aqui você encontrará informações sobre diferentes estilos de combate, história, curiosidades e muito mais.</p>
-    </section>
-
-    <section id="tipos">
-        <h2>Tipos de Luta</h2>
-        <ul>
-            <li><strong>Boxe:</strong> Modalidade focada em socos e movimentação.</li>
-            <li><strong>MMA:</strong> Combinação de várias artes marciais em um só esporte.</li>
-            <li><strong>Jiu-Jitsu:</strong> Arte marcial que enfatiza luta no chão e finalizações.</li>
-        </ul>
-    </section>
-
-    <section id="galeria">
-        <h2>Galeria de Imagens</h2>
-        <div class="galeria">
-            <img src="images/boxe.jpg" alt="Lutador de boxe">
-            <img src="images/mma.jpg" alt="Lutadores de MMA">
-            <img src="images/jiu-jitsu.jpg" alt="Treino de jiu-jitsu">
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Portal das Lutas. Todos os direitos reservados.</p>
-    </footer>
-</body>
-    <p> 
-    <a href= "currículo.odt" download>
-    clique para baixar 
-    </a>
-    </p>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Meu Site</title>
-</head>
-<body>
-    <h1>Bem-vindo ao meu site!</h1>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvFuBNfdX_MHWKyRLSfjkmtvZewD-gIE7lTQ&s" alt= "imagem de lutadores" widht= "500" heigh= "auto" >
-</body>
-</html>
-<!/DOCTYPE html>
-
-
-
