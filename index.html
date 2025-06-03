@@ -1,4 +1,72 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal das Lutas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Portal das Lutas</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#tipos">Tipos de Luta</a>
+      <a href="#galeria">Galeria</a>
+    </nav>
+  </header>
+
+  <section id="sobre">
+    <h2>Sobre o Portal</h2>
+    <p>Este site é dedicado aos apaixonados por lutas! Aqui você encontrará informações sobre diferentes estilos de combate, história, curiosidades e muito mais.</p>
+  </section>
+
+  <section id="tipos">
+    <h2>Tipos de Luta</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab('boxe')">Boxe</button>
+      <button class="tab-btn" onclick="openTab('mma')">MMA</button>
+      <button class="tab-btn" onclick="openTab('jiujitsu')">Jiu-Jitsu</button>
+    </div>
+
+    <div id="boxe" class="tab-content active">
+      <h3>Boxe</h3>
+      <p>Modalidade focada em socos, movimentação, e defesa. É um dos esportes mais tradicionais e populares do mundo.</p>
+    </div>
+    <div id="mma" class="tab-content">
+      <h3>MMA</h3>
+      <p>Combinação de várias artes marciais em um só esporte. Mistura técnicas do boxe, jiu-jitsu, muay thai, wrestling e muito mais.</p>
+    </div>
+
+    <div id="jiujitsu" class="tab-content">
+      <h3>Jiu-Jitsu</h3>
+      <p>Arte marcial que enfatiza a luta no chão e finalizações, usando alavancas e técnicas de imobilização.</p>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria de Imagens</h2>
+    <img src="https://via.placeholder.com/150" alt="Lutador de boxe">
+    <img src="https://via.placeholder.com/150" alt="Lutadores de MMA">
+    <img src="https://via.placeholder.com/150" alt="Treino de jiu-jitsu">
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Portal das Lutas. Todos os direitos reservados.</p>
+    <a href="#">Clique para baixar</a>
+  </footer>
+
+  <script>
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
