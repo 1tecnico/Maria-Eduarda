@@ -1,1 +1,208 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Sanda Fight </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #d32f2f;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      background-color: #222;
+      padding: 10px;
+      text-align: center;
+    }
+@@ -42,182 +42,62 @@
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #222;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
 
+  <header>
+    <h1> Sanda Fight </h1>
+    <p>O melhor conteúdo sobre lutas, lutadores, campeonatos e eventos !</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#lutadores">Lutadores</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre">
+    <h2>Sobre o Site</h2>
+    <p>Somos apaixonados por artes marciais, MMA, boxe e muito mais. Aqui você encontra notícias, fotos e comentários de campeonatos.</p>
+  </section>
+
+  <section id="lutadores">
+    <h2>Lutadores em Destaque</h2>
+    <ul>
+      <li>Anderson Silva - MMA</li>
+      <li>Ronda Rousey - Judo/MMA</li>
+      <li>Mike Tyson - Boxe</li>
+      <li>Bruce Lee - Kung Fu</li>
+    </ul>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria de Fotos</h2>
+    <div class="gallery"><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+</body>
+</ht<body>
+  <h1>Charles do Bronx no UFC 289
+  <p>O maior finalizador do UFC, de 20 vitórias, 16 foram por finalizações</p>
+  </h1>
+  <img 
+    src="https://conteudo.imguol.com.br/c/esporte/ca/2023/06/11/charles-do-bronx-comemora-sua-vitoria-sobre-beneil-dariush-durante-o-ufc-289-1686482511449_v2_3x4.jpg" 
+    alt="Charles do Bronx comemora sua vitória no UFC 289" 
+    width="400"
+      <img src="https://via.placeholder.com/200x150?text=Luta+2" alt="Luta 2">
+      <img src="https://via.placeholder.com/200x150?text=Lutador+3" alt="Lutador 3">
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Fale Conosco</h2>
+    <p> Email:mahduda079@gmail.com </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Clube de Lutas. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+  <p>
+<a href="currículo.odt" download >  
+  Clique para baixar
+</a>
+  </p>
+  <P> 
+<div class="calculator-container">
+  <div class="calculator">
+    <input type="text" id="display" disabled />
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="appendValue('/')">÷</button>
+      <button onclick="appendValue('*')">×</button>
+      <button onclick="deleteLast()">⌫</button>
+
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <button onclick="appendValue('-')">−</button>
+
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <button onclick="appendValue('+')">+</button>
+
+      <button onclick="appendValue('1')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3</button>
+      <button onclick="calculate()">=</button>
+
+      <button onclick="appendValue('0')" class="zero">0</button>
+      <button onclick="appendValue('.')">.</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .calculator-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+  }
+
+  .calculator {
+    background-color: #1a1a1a;
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
+  }
+
+  #display {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    background: #000;
+    color: #ff4444;
+    border: none;
+    text-align: right;
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .buttons button {
+    background-color: #ff4444;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .buttons button:hover {
+    background-color: #cc0000;
+  }
+
+  .zero {
+    grid-column: span 2;
+  }
+</style>
+
+<script>
+  function appendValue(value) {
+    document.getElementById("display").value += value;
+  }
+
+  function clearDisplay() {
+    document.getElementById("display").value = "";
+  }
+
+  function deleteLast() {
+    let current = document.getElementById("display").value;
+    document.getElementById("display").value = current.slice(0, -1);
+  }
+
+  function calculate() {
+    try {
+      let result = eval(document.getElementById("display").value);
+      document.getElementById("display").value = result;
+    } catch {
+      document.getElementById("display").value = "Erro";
+    }
+  }
+</script>
+  </P>
+</html>
