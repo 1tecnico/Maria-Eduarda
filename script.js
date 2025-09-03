@@ -57,8 +57,6 @@ function restartQuiz() {
   document.getElementById("quiz").classList.remove("hidden");
   showQuestion();
 }
-let acertos = 0;
-let erros = 0;
 function atualizarPlacar() {
   document.getElementById("acertos").textContent = acertos;
   document.getElementById("erros").textContent = erros;
