@@ -63,6 +63,11 @@ function atualizarPlacar() {
   document.getElementById("acertos").textContent = acertos;
   document.getElementById("erros").textContent = erros;
 }
+// Exemplo ao iniciar ou reiniciar
+acertos = 0;
+erros = 0;
+atualizarPlacar();
+
 
 
 
