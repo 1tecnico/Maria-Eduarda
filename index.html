@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz de Perguntas Gerais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz de Perguntas Gerais</h1>
+    <div id="quiz">
+      <div id="question">Carregando pergunta...</div>
+      <div id="options"></div>
+      <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
+    </div>
+    <div id="result" class="hidden">
+      <h2>Resultado Final</h2>
+      <p id="score"></p>
+      <button onclick="restartQuiz()">Tentar Novamente</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
