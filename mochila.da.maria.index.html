@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mochila Digital</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #4b0082, #9370db);
+        color: white;
+    }
+
+    header {
+        background-color: #6a0dad;
+        padding: 20px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 30px auto;
+    }
+
+    .card {
+        background-color: #7b2cbf;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+
+    .card h2 {
+        margin-top: 0;
+        color: #e0b3ff;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        background-color: #c77dff;
+        color: #2d004d;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #e0aaff;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        background-color: #9d4edd;
+        margin-top: 8px;
+        padding: 8px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .delete-btn {
+        background-color: #ff4d6d;
+        color: white;
+        padding: 5px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #6a0dad;
+        margin-top: 40px;
+        font-size: 14px;
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+🎒 Minha Mochila Digital
+</header>
+
+<div class="container">
+
+    <!-- MATÉRIAS -->
+    <div class="card">
+        <h2>Adicionar Nova Matéria</h2>
+        <input type="text" id="novaMateria" placeholder="Digite o nome da matéria...">
+        <button onclick="adicionarMateria()">Adicionar Matéria</button>
+    </div>
+
+    <div id="materias"></div>
+
+</div>
+
+<footer>
+Desenvolvido para organização escolar 💜
+</footer>
+
+<script>
+
+let materias = JSON.parse(localStorage.getItem("materias")) || [];
+
+function salvarDados() {
+    localStorage.setItem("materias", JSON.stringify(materias));
+}
+
+function adicionarMateria() {
+    const nome = document.getElementById("novaMateria").value.trim();
+    if(nome === "") return;
+
+    materias.push({ nome: nome, conteudos: [] });
+    document.getElementById("novaMateria").value = "";
+    salvarDados();
+    renderizar();
+}
+
+function adicionarConteudo(index) {
+    const input = document.getElementById("conteudo-"+index);
+    const texto = input.value.trim();
+    if(texto === "") return;
+
+    materias[index].conteudos.push(texto);
+    input.value = "";
+    salvarDados();
+    renderizar();
+}
+
+function deletarConteudo(materiaIndex, conteudoIndex) {
+    materias[materiaIndex].conteudos.splice(conteudoIndex,1);
+    salvarDados();
+    renderizar();
+}
+
+function renderizar() {
+    const div = document.getElementById("materias");
+    div.innerHTML = "";
+
+    materias.forEach((materia, index) => {
+
+        let card = document.createElement("div");
+        card.className = "card";
+
+        let html = `
+            <h2>${materia.nome}</h2>
+            <input type="text" id="conteudo-${index}" placeholder="Adicionar conteúdo...">
+            <button onclick="adicionarConteudo(${index})">Adicionar Conteúdo</button>
+            <ul>
+        `;
+
+        materia.conteudos.forEach((conteudo, i) => {
+            html += `
+                <li>
+                    ${conteudo}
+                    <span class="delete-btn" onclick="deletarConteudo(${index}, ${i})">X</span>
+                </li>
+            `;
+        });
+
+        html += "</ul>";
+        card.innerHTML = html;
+        div.appendChild(card);
+    });
+}
+
+renderizar();
+
+</script>
+
+</body>
+</html>
